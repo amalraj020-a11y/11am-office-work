@@ -281,7 +281,14 @@ def write_project(data: dict[str, Any], mission: str, today: str) -> Path:
     for item in data["files"]:
         destination = project_dir.joinpath(*PurePosixPath(item["path"]).parts)
         destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_text(item["content"], encoding="utf-8")
+        content = item["content"]
+        if PurePosixPath(item["path"]).as_posix() == "index.html" and not re.search(
+            r"<meta\b[^>]*\bname\s*=\s*['\"]viewport['\"]", content, re.I
+        ):
+            head = re.search(r"<head\b[^>]*>", content, re.I)
+            viewport = '<meta name="viewport" content="width=device-width, initial-scale=1">'
+            content = content[: head.end()] + viewport + content[head.end() :] if head else viewport + content
+        destination.write_text(content, encoding="utf-8")
     metadata = {key: value for key, value in data.items() if key != "files"}
     metadata.update({"mission": mission, "ist_date": today, "generated_at": dt.datetime.now(IST).isoformat()})
     (project_dir / "project.json").write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
