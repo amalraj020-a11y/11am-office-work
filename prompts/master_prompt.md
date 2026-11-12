@@ -13,6 +13,7 @@ Technical rules:
 - Do not use secrets, trackers, payments, login impersonation, remote executable scripts, or paid APIs.
 - Do not claim that an unverified backend, deployment, customer, test, or revenue exists.
 - Include `index.html`, at least one CSS file, at least one JavaScript file, and `README.md`.
+- Every item in `files` must be an object with exactly two text fields: a non-empty `path` and the complete file `content`. Never return null, arrays, or nested objects for either field.
 - Keep the response below 300 KB and use at most 15 text files.
 - Keep every JSON string valid and single-line. Escape newlines as `\n`; do not use raw line breaks inside string values.
 - Avoid emoji and unusual Unicode punctuation in JSON values so free-tier providers can validate the response reliably.
@@ -44,7 +45,7 @@ Return only valid JSON, with no Markdown fence or commentary, using this exact s
   "tests": ["manual scenario and expected result"],
   "next_improvements": ["next improvement"],
   "files": [
-    {"path": "index.html", "content": "complete file contents"},
+    {"path": "index.html", "content": "complete file contents as one JSON string"},
     {"path": "styles.css", "content": "complete file contents"},
     {"path": "app.js", "content": "complete file contents"},
     {"path": "README.md", "content": "documentation including usage, testing, business hypothesis, and limitations"}

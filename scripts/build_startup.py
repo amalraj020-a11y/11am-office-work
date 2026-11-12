@@ -101,13 +101,24 @@ def provider_response(mission: str, today: str) -> dict[str, Any]:
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
             raise FactoryError(f"AI provider request failed: {exc}") from exc
         try:
-            return json.loads(body["choices"][0]["message"]["content"])
+            candidate = json.loads(body["choices"][0]["message"]["content"])
+            if not isinstance(candidate, dict):
+                raise FactoryError("AI provider response must be one JSON object")
+            validate_payload(candidate)
+            return candidate
         except (KeyError, IndexError, TypeError, json.JSONDecodeError):
             last_error = "AI provider response body was not valid JSON"
-            if attempt < 2:
-                payload["temperature"] = 0.1
-                payload["messages"].append({"role": "user", "content": repair_message})
-                continue
+        except FactoryError as exc:
+            last_error = str(exc)
+        if attempt < 2:
+            payload["temperature"] = 0.1
+            payload["messages"].append(
+                {
+                    "role": "user",
+                    "content": f"Repair the complete JSON product. Validation failed: {last_error}. {repair_message}",
+                }
+            )
+            continue
     raise FactoryError(last_error)
 
 
