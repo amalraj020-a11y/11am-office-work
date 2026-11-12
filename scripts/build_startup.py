@@ -55,6 +55,73 @@ def existing_catalog() -> str:
     return path.read_text(encoding="utf-8")[-20_000:] if path.exists() else "No prior products."
 
 
+def startup_schema() -> dict[str, Any]:
+    string_array = {"type": "array", "items": {"type": "string"}}
+    properties: dict[str, Any] = {
+        "project_name": {"type": "string"},
+        "slug": {"type": "string"},
+        "problem": {"type": "string"},
+        "solution": {"type": "string"},
+        "target_customers": string_array,
+        "competitors": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "url": {"type": "string"},
+                    "difference": {"type": "string"},
+                    "verified": {"type": "boolean"},
+                },
+                "required": ["name", "url", "difference", "verified"],
+                "additionalProperties": False,
+            },
+        },
+        "features": string_array,
+        "tech_stack": string_array,
+        "monetization": {
+            "type": "object",
+            "properties": {
+                "model": {"type": "string"},
+                "pricing_hypothesis": {"type": "string"},
+                "free_tier": {"type": "string"},
+            },
+            "required": ["model", "pricing_hypothesis", "free_tier"],
+            "additionalProperties": False,
+        },
+        "free_hosting": {"type": "string"},
+        "operating_costs": string_array,
+        "launch_strategy": string_array,
+        "potential_customers": string_array,
+        "marketing_content": {
+            "type": "object",
+            "properties": {
+                "tagline": {"type": "string"},
+                "social_post": {"type": "string"},
+            },
+            "required": ["tagline", "social_post"],
+            "additionalProperties": False,
+        },
+        "tests": string_array,
+        "next_improvements": string_array,
+        "files": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {"path": {"type": "string"}, "content": {"type": "string"}},
+                "required": ["path", "content"],
+                "additionalProperties": False,
+            },
+        },
+    }
+    return {
+        "type": "object",
+        "properties": properties,
+        "required": list(properties),
+        "additionalProperties": False,
+    }
+
+
 def provider_response(mission: str, today: str) -> dict[str, Any]:
     api_key = os.environ.get("AI_API_KEY", "").strip()
     api_base = os.environ.get("AI_API_BASE", "").strip().rstrip("/")
@@ -65,7 +132,10 @@ def provider_response(mission: str, today: str) -> dict[str, Any]:
     payload = {
         "model": model,
         "temperature": 0.7,
-        "response_format": {"type": "json_object"},
+        "response_format": {
+            "type": "json_schema",
+            "json_schema": {"name": "daily_startup", "strict": True, "schema": startup_schema()},
+        },
         "messages": [
             {"role": "system", "content": (ROOT / "prompts" / "master_prompt.md").read_text(encoding="utf-8")},
             {"role": "user", "content": f"Mission: {mission}\nIST date: {today}\nExisting catalog (do not repeat):\n{existing_catalog()}"},
