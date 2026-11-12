@@ -1,0 +1,71 @@
+{
+  "project_name": "ToolShare Scheduler",
+  "slug": "toolshare-scheduler",
+  "problem": "Neighborhoods often have shared tool libraries or community tool sheds, but coordinating reservations, availability, and maintenance is done manually via paper logs or group chats, leading to conflicts and under‑use.",
+  "solution": "A lightweight, mobile‑responsive static web app that lets residents view, reserve, and return tools in a community shed. All data is stored locally per user and can be exported/imported as JSON for the caretaker, eliminating the need for a server.",
+  "target_customers": [
+    "Residents of housing societies with shared tool sheds",
+    "Community association caretakers"
+  ],
+  "competitors": [
+    {
+      "name": "Nextdoor",
+      "url": "",
+      "difference": "General neighborhood social platform, no dedicated tool reservation UI",
+      "verified": false
+    },
+    {
+      "name": "ShareTool",
+      "url": "",
+      "difference": "Requires cloud subscription and user accounts; our app runs entirely on static hosting",
+      "verified": false
+    }
+  ],
+  "features": [
+    "View list of tools with availability status",
+    "Reserve a tool for a specific date range",
+    "Mark tool as returned",
+    "Export and import full inventory JSON for caretaker backup",
+    "Responsive design for phones and tablets"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Charge a small annual fee (e.g., $5) for premium features like multi‑user sync via Google Drive or automated email reminders",
+    "free_tier": "All core reservation features, export/import, unlimited tools"
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Create a simple landing page on the repo with a QR code for local community newsletters",
+    "Reach out to 3 housing societies via email to pilot the tool and gather feedback"
+  ],
+  "potential_customers": [
+    "Housing societies in urban India",
+    "Co‑operative housing boards",
+    "Neighborhood NGOs managing shared resources"
+  ],
+  "marketing_content": {
+    "tagline": "Reserve, use, return – keep your community tools in sync.",
+    "social_post": "🚀 Introducing ToolShare Scheduler – a free, no‑login web app that lets your neighborhood book and track shared tools. No server, no fees, just a simple spreadsheet‑style UI that works on any phone. Try it today at https://yourusername.github.io/toolshare-scheduler"
+  },
+  "tests": [
+    "Open the site, click 'Add New Tool', fill name and quantity, save – the tool appears in the list.",
+    "Reserve a tool for tomorrow, close the browser, reopen – reservation persists via localStorage.",
+    "Mark the tool as returned – status changes back to 'Available'."
+  ],
+  "next_improvements": [
+    "Add optional Google Drive sync for multi‑device backup",
+    "Implement email reminder notifications via a serverless function",
+    "Provide a printable QR code label generator for each tool"
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-12",
+  "generated_at": "2026-11-13T03:18:11.236335+05:30"
+}
