@@ -132,6 +132,8 @@ def provider_response(mission: str, today: str) -> dict[str, Any]:
     payload = {
         "model": model,
         "temperature": 0.7,
+        "max_completion_tokens": 16_000,
+        "reasoning_effort": "low",
         "response_format": {
             "type": "json_schema",
             "json_schema": {"name": "daily_startup", "strict": True, "schema": startup_schema()},
