@@ -23,6 +23,10 @@ on:
         required: true
         default: true
         type: boolean
+      run_date:
+        description: Optional IST date for a missed mission (YYYY-MM-DD)
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -79,6 +83,9 @@ jobs:
         run: |
           set -euo pipefail
           args=(--mission "${{ steps.mission.outputs.mission }}")
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" && -n "${{ inputs.run_date }}" ]]; then
+            args+=(--date "${{ inputs.run_date }}")
+          fi
           if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" && "$DRY_RUN" == "true" ]]; then
             args+=(--dry-run)
           fi

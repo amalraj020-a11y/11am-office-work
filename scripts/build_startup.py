@@ -31,7 +31,23 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--mission", choices=("website", "application"), required=True)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--date", help="Optional historical IST mission date (YYYY-MM-DD)")
     return parser.parse_args()
+
+
+def mission_date(value: str | None) -> str:
+    current = dt.datetime.now(IST).date()
+    if not value:
+        return current.isoformat()
+    try:
+        requested = dt.date.fromisoformat(value)
+    except ValueError as exc:
+        raise FactoryError("Mission date must use YYYY-MM-DD format") from exc
+    if requested > current:
+        raise FactoryError("Mission date cannot be in the future")
+    if requested < current - dt.timedelta(days=7):
+        raise FactoryError("Catch-up missions are limited to the previous seven days")
+    return requested.isoformat()
 
 
 def existing_catalog() -> str:
@@ -240,7 +256,7 @@ def write_outputs(data: dict[str, Any], project_dir: Path, report: Path, mission
 
 def main() -> int:
     args = parse_args()
-    today = dt.datetime.now(IST).date().isoformat()
+    today = mission_date(args.date)
     report = ROOT / "reports" / "daily-reports" / f"{today}-{args.mission}.md"
     if report.exists():
         raise FactoryError(f"The {args.mission} mission for {today} already exists; refusing a duplicate streak commit")
