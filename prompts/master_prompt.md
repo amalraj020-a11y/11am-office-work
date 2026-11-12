@@ -14,6 +14,8 @@ Technical rules:
 - Do not claim that an unverified backend, deployment, customer, test, or revenue exists.
 - Include `index.html`, at least one CSS file, at least one JavaScript file, and `README.md`.
 - Keep the response below 300 KB and use at most 15 text files.
+- Keep every JSON string valid and single-line. Escape newlines as `\n`; do not use raw line breaks inside string values.
+- Avoid emoji and unusual Unicode punctuation in JSON values so free-tier providers can validate the response reliably.
 
 Business and research rules:
 

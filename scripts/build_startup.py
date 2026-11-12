@@ -71,28 +71,44 @@ def provider_response(mission: str, today: str) -> dict[str, Any]:
             {"role": "user", "content": f"Mission: {mission}\nIST date: {today}\nExisting catalog (do not repeat):\n{existing_catalog()}"},
         ],
     }
-    request = urllib.request.Request(
-        f"{api_base}/chat/completions",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-            "User-Agent": "Amala-Daily-Startup-Factory/1.0 (+https://github.com/amalraj020-a11y/11am-office-work)",
-        },
-        method="POST",
+    repair_message = (
+        "Your previous response was not valid JSON. Return the same complete product again as one valid JSON object. "
+        "Use only plain ASCII in prose, escape every newline inside file content as \\n, and include no Markdown fence or commentary."
     )
-    try:
-        with urllib.request.urlopen(request, timeout=180) as response:
-            body = json.load(response)
-    except urllib.error.HTTPError as exc:
-        detail = exc.read(2_000).decode("utf-8", errors="replace")
-        raise FactoryError(f"AI provider returned HTTP {exc.code}: {detail}") from exc
-    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
-        raise FactoryError(f"AI provider request failed: {exc}") from exc
-    try:
-        return json.loads(body["choices"][0]["message"]["content"])
-    except (KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
-        raise FactoryError("AI provider did not return the required JSON object") from exc
+    last_error = "AI provider did not return the required JSON object"
+    for attempt in range(3):
+        request = urllib.request.Request(
+            f"{api_base}/chat/completions",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                "User-Agent": "Amala-Daily-Startup-Factory/1.0 (+https://github.com/amalraj020-a11y/11am-office-work)",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=180) as response:
+                body = json.load(response)
+        except urllib.error.HTTPError as exc:
+            detail = exc.read(2_000).decode("utf-8", errors="replace")
+            last_error = f"AI provider returned HTTP {exc.code}: {detail}"
+            if exc.code == 400 and "json_validate_failed" in detail and attempt < 2:
+                payload["temperature"] = 0.1
+                payload["messages"].append({"role": "user", "content": repair_message})
+                continue
+            raise FactoryError(last_error) from exc
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            raise FactoryError(f"AI provider request failed: {exc}") from exc
+        try:
+            return json.loads(body["choices"][0]["message"]["content"])
+        except (KeyError, IndexError, TypeError, json.JSONDecodeError):
+            last_error = "AI provider response body was not valid JSON"
+            if attempt < 2:
+                payload["temperature"] = 0.1
+                payload["messages"].append({"role": "user", "content": repair_message})
+                continue
+    raise FactoryError(last_error)
 
 
 def dry_run_response(mission: str) -> dict[str, Any]:
