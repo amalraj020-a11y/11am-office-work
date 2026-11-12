@@ -237,3 +237,63 @@ Planned infrastructure:
 **AMALA AI | BEYOND AUTOMATION, BEYOND LIMITS.**
 
 </div>
+
+---
+
+## 🧰 Factory Operations & Setup
+
+The automation in `.github/workflows/daily-startup.yml` runs on GitHub-hosted runners, so it does not depend on Raj's computer being switched on. It:
+
+1. Checks `CATALOG.md` to discourage repeated ideas.
+2. Calls an OpenAI-compatible cloud inference API.
+3. Validates generated paths, documentation, responsive markup and basic accessibility.
+4. Stores products under `websites/day-NNN-*` or `applications/day-NNN-*`.
+5. Writes daily and revenue reports plus an Excel-compatible CSV ledger.
+6. Commits meaningful work, deploys verified static output to GitHub Pages and optionally reports to Telegram.
+
+Static and offline-first products are preferred so the system can stay within free tiers. Products that need a private server, payment processor, app-store account or paid service are documented but not activated automatically.
+
+### One-time GitHub setup
+
+1. In **Settings → Actions → General → Workflow permissions**, select **Read and write permissions**.
+2. Under **Settings → Secrets and variables → Actions**, add:
+
+   | Type | Name | Value |
+   | --- | --- | --- |
+   | Secret | `AI_API_KEY` | Cloud AI provider key |
+   | Variable | `AI_API_BASE` | OpenAI-compatible base URL ending before `/chat/completions` |
+   | Variable | `AI_MODEL` | Exact provider model ID |
+   | Secret, optional | `TELEGRAM_BOT_TOKEN` | Telegram bot token |
+   | Secret, optional | `TELEGRAM_CHAT_ID` | Raj's destination chat ID |
+
+3. In **Settings → Pages → Build and deployment**, select **GitHub Actions**.
+4. Open **Actions → Amala Daily Startup Factory → Run workflow** and test both missions with dry-run enabled. Then test once with dry-run disabled.
+
+Never commit API keys. Free-tier availability and limits can change, so no provider or ₹0 operation is guaranteed.
+
+### Schedule
+
+- `0 11 * * *` in `Asia/Kolkata` — website mission
+- `0 23 * * *` in `Asia/Kolkata` — application mission
+
+GitHub may delay scheduled jobs during busy periods. Public-repository schedules can also be disabled after 60 days without repository activity.
+
+### Repository output
+
+```text
+applications/day-NNN-project-name/
+websites/day-NNN-project-name/
+reports/daily-reports/
+reports/revenue-reports/
+reports/startup-ledger.csv
+CATALOG.md
+```
+
+Duplicate same-day missions stop without manufacturing a commit. Competitor claims require human verification, revenue remains a hypothesis, and failed runs do not create fake product contributions.
+
+### Local dry run
+
+```bash
+python scripts/build_startup.py --mission website --dry-run
+python scripts/validate_project.py websites/day-001-queue-calm
+```

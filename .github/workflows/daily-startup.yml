@@ -1,0 +1,166 @@
+name: Amala Daily Startup Factory
+
+run-name: "Amala ${{ inputs.mission || github.event.schedule || 'scheduled mission' }}"
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+      timezone: "Asia/Kolkata"
+    - cron: "0 23 * * *"
+      timezone: "Asia/Kolkata"
+  workflow_dispatch:
+    inputs:
+      mission:
+        description: Product mission to run
+        required: true
+        default: website
+        type: choice
+        options:
+          - website
+          - application
+      dry_run:
+        description: Build a deterministic sample without calling the AI provider
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: amala-daily-startup-factory
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      project_dir: ${{ steps.generate.outputs.project_dir }}
+      project_name: ${{ steps.generate.outputs.project_name }}
+      mission: ${{ steps.mission.outputs.mission }}
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select mission
+        id: mission
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          INPUT_MISSION: ${{ inputs.mission }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            mission="$INPUT_MISSION"
+          elif [[ "$EVENT_SCHEDULE" == "0 11 * * *" ]]; then
+            mission="website"
+          elif [[ "$EVENT_SCHEDULE" == "0 23 * * *" ]]; then
+            mission="application"
+          else
+            echo "Unable to determine mission from event" >&2
+            exit 1
+          fi
+          echo "mission=$mission" >> "$GITHUB_OUTPUT"
+
+      - name: Generate product
+        id: generate
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_API_BASE: ${{ vars.AI_API_BASE }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--mission "${{ steps.mission.outputs.mission }}")
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" && "$DRY_RUN" == "true" ]]; then
+            args+=(--dry-run)
+          fi
+          python scripts/build_startup.py "${args[@]}"
+
+      - name: Validate generated product
+        run: python scripts/validate_project.py "${{ steps.generate.outputs.project_dir }}"
+
+      - name: Stage latest product for Pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf public
+          mkdir public
+          cp -R "${{ steps.generate.outputs.project_dir }}/." public/
+
+      - name: Commit meaningful generated work
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Amala Startup Factory"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add websites applications reports CATALOG.md
+          if git diff --cached --quiet; then
+            echo "No product changes were generated; refusing an empty commit." >&2
+            exit 1
+          fi
+          git commit -m "build(${{ steps.mission.outputs.mission }}): ${{ steps.generate.outputs.project_name }}"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Upload mission reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: amala-${{ steps.mission.outputs.mission }}-${{ github.run_id }}
+          path: |
+            reports/
+            .amala-summary.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy verified product to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  notify:
+    if: always()
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out notification script
+        uses: actions/checkout@v4
+
+      - name: Download mission reports
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: amala-*
+          merge-multiple: true
+
+      - name: Notify Raj on Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          BUILD_RESULT: ${{ needs.build.result }}
+          DEPLOY_RESULT: ${{ needs.deploy.result }}
+          PROJECT_NAME: ${{ needs.build.outputs.project_name }}
+          MISSION: ${{ needs.build.outputs.mission }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          PAGES_URL: ${{ needs.deploy.result == 'success' && format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) || '' }}
+        run: python scripts/notify_telegram.py

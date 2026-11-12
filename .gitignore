@@ -1,0 +1,4 @@
+.amala-summary.json
+public/
+__pycache__/
+*.pyc
