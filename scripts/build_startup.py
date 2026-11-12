@@ -74,7 +74,11 @@ def provider_response(mission: str, today: str) -> dict[str, Any]:
     request = urllib.request.Request(
         f"{api_base}/chat/completions",
         data=json.dumps(payload).encode("utf-8"),
-        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "User-Agent": "Amala-Daily-Startup-Factory/1.0 (+https://github.com/amalraj020-a11y/11am-office-work)",
+        },
         method="POST",
     )
     try:
