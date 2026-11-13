@@ -1,0 +1,72 @@
+{
+  "project_name": "GardenPlot Planner",
+  "slug": "gardenplot-planner",
+  "problem": "Urban community gardens struggle with manual sign‑ups, overlapping plot reservations, and lack of clear communication about plot availability and maintenance schedules.",
+  "solution": "A lightweight, mobile‑responsive web app that lets garden members view, claim, and release garden plots, track planting cycles, and receive reminders, all stored locally for zero‑cost hosting.",
+  "target_customers": [
+    "Community garden coordinators",
+    "Urban residents with garden plots",
+    "Neighborhood associations"
+  ],
+  "competitors": [
+    {
+      "name": "Plotly Gardens",
+      "url": "",
+      "difference": "Provides a full SaaS platform with paid tiers; our tool is free, static, and requires no backend.",
+      "verified": false
+    },
+    {
+      "name": "Garden Manager App",
+      "url": "",
+      "difference": "Mobile‑only with subscription; we offer a web‑only, open‑source solution that works offline.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "View a calendar of all garden plots with current occupancy",
+    "Claim or release a plot with a simple form",
+    "Add planting notes and expected harvest dates",
+    "Automatic local reminders via browser notifications",
+    "Responsive design for phones and tablets"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a paid ‘Premium Pack’ with printable PDF reports and custom branding for larger garden groups.",
+    "free_tier": "All core features remain free; premium adds PDF export and multi‑garden support."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Create a GitHub repo and enable GitHub Pages",
+    "Share the link in local garden Facebook groups and newsletters",
+    "Collect feedback via a simple Google Form linked from the site"
+  ],
+  "potential_customers": [
+    "City park garden committees",
+    "Housing complex garden boards",
+    "School community garden clubs"
+  ],
+  "marketing_content": {
+    "tagline": "Grow together – manage your garden plots with ease.",
+    "social_post": "🌱 Introducing GardenPlot Planner – a free, offline‑first web app that helps community gardens track plot reservations, planting notes, and harvest dates. No sign‑up, no fees. Try it today at https://yourusername.github.io/gardenplot-planner"
+  },
+  "tests": [
+    "Open the site on a phone, click ‘Claim Plot’, fill details, and see the plot appear on the calendar. Expected: plot shows with entered name and notes.",
+    "Refresh the page; the claimed plot persists via localStorage. Expected: data remains after reload."
+  ],
+  "next_improvements": [
+    "Add iCal export for syncing with personal calendars",
+    "Implement multi‑garden support with a simple selector",
+    "Provide optional cloud backup via free Firebase hosting"
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-13",
+  "generated_at": "2026-11-13T11:57:10.519165+05:30"
+}
