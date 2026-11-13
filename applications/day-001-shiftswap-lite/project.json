@@ -1,0 +1,73 @@
+{
+  "project_name": "ShiftSwap Lite",
+  "slug": "shiftswap-lite",
+  "problem": "Part‑time and gig workers often need to swap or pick up last‑minute shift changes, but coordinating via chat groups leads to missed opportunities, confusion, and unpaid hours.",
+  "solution": "A lightweight, mobile‑responsive web app that lets workers post available shifts, browse nearby openings, and claim them instantly, with simple calendar view and local storage persistence.",
+  "target_customers": [
+    "part‑time retail staff",
+    "gig economy workers",
+    "hospitality employees"
+  ],
+  "competitors": [
+    {
+      "name": "Shiftboard",
+      "url": "",
+      "difference": "ShiftSwap Lite is free, no login, works entirely client‑side, no corporate onboarding",
+      "verified": false
+    },
+    {
+      "name": "When I Work",
+      "url": "",
+      "difference": "Provides only employer‑driven scheduling; our app focuses on peer‑to‑peer swaps",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create a shift offer with date, time, location and notes",
+    "Browse open shifts filtered by distance and time",
+    "Claim a shift with one click; the claim is stored locally",
+    "Calendar view of your own posted and claimed shifts",
+    "Responsive design for phones and tablets"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer premium filters (radius, skill tags) for $1.99/month after 1,000 active users",
+    "free_tier": "All core features remain free; premium adds advanced search and export to calendar"
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repo on GitHub and enable GitHub Pages",
+    "Share in relevant subreddit communities (r/retail, r/gigwork) and local Facebook groups",
+    "Collect feedback via a short Google Form linked from the site"
+  ],
+  "potential_customers": [
+    "local coffee shop staff looking for extra hours",
+    "students doing campus‑side part‑time jobs",
+    "seasonal event workers"
+  ],
+  "marketing_content": {
+    "tagline": "Swap shifts in seconds – keep your schedule full and your wallet happy.",
+    "social_post": "🚀 Introducing ShiftSwap Lite – the free, no‑login tool for gig and part‑time workers to post, find, and claim last‑minute shifts. Try it now on GitHub Pages and never miss a payday again! #gigwork #shiftswap"
+  },
+  "tests": [
+    "Create a shift, then refresh the page – the shift should persist in the list",
+    "Filter shifts by time range – only matching shifts appear",
+    "Claim a shift – it moves from open list to your claimed list and is saved after reload"
+  ],
+  "next_improvements": [
+    "Add optional email notification via mailto links",
+    "Implement distance calculation using browser geolocation",
+    "Allow export of claimed shifts to iCal"
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-13",
+  "generated_at": "2026-11-13T23:50:01.755530+05:30"
+}
