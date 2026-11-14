@@ -1,0 +1,73 @@
+{
+  "project_name": "Neighborhood BookSwap",
+  "slug": "neighborhood-bookswap",
+  "problem": "Residents in small neighborhoods want to exchange books locally but lack a simple way to list, request, and schedule pickups, leading to missed sharing opportunities and cluttered group chats.",
+  "solution": "A lightweight static web app where users can post books they offer, browse nearby offers, send pickup requests, and track pending exchanges, all stored in the browser with optional export/import for persistence.",
+  "target_customers": [
+    "Urban apartment dwellers",
+    "Suburban neighborhood groups",
+    "Community library volunteers"
+  ],
+  "competitors": [
+    {
+      "name": "BookCrossing",
+      "url": "",
+      "difference": "Focuses on global tracking; no neighborhood‑only UI or simple static hosting.",
+      "verified": false
+    },
+    {
+      "name": "Nextdoor",
+      "url": "",
+      "difference": "General social platform; no dedicated book‑swap workflow or offline‑first design.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Add a book listing with title, author, condition, and optional photo",
+    "Search and filter listings by title or genre",
+    "Request a pickup; the owner can accept or decline",
+    "Local storage of all data; export/import JSON for backup or sharing",
+    "Responsive design for mobile and desktop"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer premium features like QR code labels and custom themes for $2/month after 500 active users.",
+    "free_tier": "All core listing, search, and request features remain free."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free-tier limits"
+  ],
+  "launch_strategy": [
+    "Create a simple landing page and share in local community newsletters and Nextdoor groups.",
+    "Collect feedback via a short survey linked from the site.",
+    "Iterate based on user input before adding premium options."
+  ],
+  "potential_customers": [
+    "Apartment complexes with shared mailrooms",
+    "HOA newsletters",
+    "Local schools book clubs"
+  ],
+  "marketing_content": {
+    "tagline": "Turn your shelves into community shelves.",
+    "social_post": "📚 Introducing Neighborhood BookSwap – a free, offline‑first way to list, request, and exchange books right in your block. No login, no ads, just reading. Try it now at https://yourusername.github.io/neighborhood-bookswap"
+  },
+  "tests": [
+    "Add a new book, refresh page, verify it persists via localStorage.",
+    "Search for a title that exists, ensure results show the correct card.",
+    "Send a pickup request, accept it, and confirm status changes to 'Accepted'."
+  ],
+  "next_improvements": [
+    "Add QR code generation for each listing to simplify in‑person handovers.",
+    "Implement a lightweight serverless function for optional cloud backup.",
+    "Introduce user‑generated tags for better categorization."
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-14",
+  "generated_at": "2026-11-14T11:48:27.677020+05:30"
+}
