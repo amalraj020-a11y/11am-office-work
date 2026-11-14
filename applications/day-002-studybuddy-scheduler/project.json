@@ -1,0 +1,70 @@
+{
+  "project_name": "StudyBuddy Scheduler",
+  "slug": "studybuddy-scheduler",
+  "problem": "College and high‑school students often struggle to find suitable study partners for specific subjects, times, and locations, relying on fragmented group chats that lead to missed connections and inefficient study sessions.",
+  "solution": "A lightweight web app where users can post short study‑session offers or requests, filter by subject, date, and location, and claim slots instantly. All data is stored locally, enabling quick matching without any backend.",
+  "target_customers": [
+    "Students (high school, college) looking for peer study sessions"
+  ],
+  "competitors": [
+    {
+      "name": "StudySoup",
+      "url": "",
+      "difference": "Focuses on tutoring services and paid content; ours is free, peer‑to‑peer matching with no backend.",
+      "verified": false
+    },
+    {
+      "name": "Meetup",
+      "url": "",
+      "difference": "General event platform; our app is purpose‑built for short, recurring study meet‑ups with simple UI.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create study session offers or requests",
+    "Filter listings by subject, date, and location",
+    "Claim a session with one click",
+    "Persist data in localStorage",
+    "Responsive design for mobile and desktop"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer premium filters (e.g., by GPA, study style) for $1.99/month after 1,000 active users.",
+    "free_tier": "All core features remain free; premium adds advanced sorting and export of schedule."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Create a simple landing page on GitHub Pages and share the link in student Discord servers and campus newsletters.",
+    "Collect feedback via a short Google Form linked from the app."
+  ],
+  "potential_customers": [
+    "University student unions",
+    "High‑school study clubs",
+    "Online student communities"
+  ],
+  "marketing_content": {
+    "tagline": "Find a study buddy in seconds – no group chat required.",
+    "social_post": "🚀 Introducing StudyBuddy Scheduler – the fast, free way to match with peers for a focused study session. Post what you need, filter by subject & time, and claim a spot instantly. Try it now at https://yourusername.github.io/studybuddy-scheduler"
+  },
+  "tests": [
+    "Open the app, click 'Add Session', fill all fields, and save – the new session appears in the list.",
+    "Use the filter dropdowns to narrow results – only matching sessions remain visible.",
+    "Click 'Claim' on a session – it moves to 'My Sessions' and is removed from the public list."
+  ],
+  "next_improvements": [
+    "Add optional user profiles with optional email notifications.",
+    "Implement a simple serverless backend (e.g., Netlify Functions) for cross‑device syncing.",
+    "Introduce a rating system for study partners."
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-14",
+  "generated_at": "2026-11-14T23:36:38.609784+05:30"
+}
