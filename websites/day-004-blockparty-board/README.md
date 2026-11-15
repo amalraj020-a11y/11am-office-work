@@ -1,1 +1,27 @@
-# BlockParty Board\n\n## Overview\nBlockParty Board is a static, privacy‑first web app that lets anyone create a shareable event page for neighborhood gatherings, garage sales, pop‑up classes, etc. All data is stored in the browser's `localStorage`, so no server or login is required.\n\n## Features\n- Create an event with title, date, time, location, optional attendee limit and description\n- Generate a short URL (hash) that loads the event\n- RSVP with name and optional note\n- View attendee list in real time\n- Edit/delete only possible by the creator via the same browser (no authentication)\n- Responsive layout, keyboard accessible forms, client‑side validation\n\n## Getting Started\n1. Clone the repo or download the files.\n2. Open `index.html` in a modern browser.\n3. Fill the "Create Event" form and submit.\n4. The page will redirect to `#<eventId>` – copy this URL to share.\n5. Visitors can open the link, view details and RSVP.\n\n## Testing Manual Scenarios\n- **Create & Share**: After creating an event, open the generated URL in an incognito window. The event should display correctly.\n- **Form Validation**: Try submitting the create form with an empty title; the browser should block submission and show a validation message.\n- **Attendee Limit**: Set a limit of 2, RSVP with three different names; the third attempt should show an alert that the limit is reached.\n\n## Business Hypothesis\n- **Target Customers**: Residents of apartments, small housing societies, local clubs.\n- **Problem**: No easy, ad‑free way to announce one‑off events without creating accounts.\n- **Differentiator**: Zero‑setup, no data collection, works offline.\n- **Monetization**: Freemium – free local storage version; paid tier offers custom domain hosting and CSV export.\n\n## Limitations\n- Data is stored per browser; if the creator clears storage, the event disappears.\n- No server‑side persistence; suitable only for small, local events.\n- No authentication – anyone with the URL can edit the event in the same browser session.\n\n## Deployment\nThe site can be hosted on GitHub Pages (free). Simply push the repository and enable Pages from the `main` branch.\n\n## Future Improvements\n- Optional cloud backup via a free JSON bin service.\n- QR‑code generator for flyers.\n- Image upload for event banners (Base64).\n\n---\n*This project is a prototype created on 2026‑11‑15. All business statements are hypotheses, not guarantees.*
+# BlockParty Board
+
+A mobile-friendly, zero-cost neighborhood event-card creator. It works on GitHub Pages without accounts, trackers, paid APIs or a backend.
+
+## Working features
+
+- Create, edit and delete an event on the organizer's browser.
+- Store event details and local RSVPs in `localStorage`.
+- Encode public event details in a shareable URL so the event card opens on another device.
+- Add attendee names and notes locally with an optional capacity limit.
+- Responsive layout, accessible labels, keyboard focus and form validation.
+
+## Run and test
+
+Open `index.html`, create an event, then copy its share link. Open that link in a private window and confirm the event details appear. Add an RSVP and reload to confirm it persists in that browser. Test editing and deleting from the original browser.
+
+## Honest limitation
+
+Because this version has no backend, RSVP lists do not synchronize between different devices. The event itself can be shared because its public details are encoded in the URL. A future opt-in cloud tier could provide shared RSVPs and reminders.
+
+## Business hypothesis
+
+The free version can attract apartment associations and local organizers. A potential paid tier could add shared cloud RSVPs, QR-code flyers, reminders and custom branding. Revenue is not guaranteed and requires customer validation.
+
+## Hosting and costs
+
+GitHub Pages hosting costs ₹0 within its published limits. The project uses plain HTML, CSS and JavaScript.
