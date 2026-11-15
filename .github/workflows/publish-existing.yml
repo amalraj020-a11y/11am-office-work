@@ -1,0 +1,54 @@
+name: Publish Existing Startup
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_dir:
+        description: Existing website or application folder to validate and publish
+        required: true
+        default: websites/day-004-blockparty-board
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate project path
+        id: path
+        env:
+          PROJECT_DIR: ${{ inputs.project_dir }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "$PROJECT_DIR" =~ ^(websites|applications)/day-[a-zA-Z0-9._/-]+$ ]] || [[ "$PROJECT_DIR" == *".."* ]] || [[ ! -d "$PROJECT_DIR" ]]; then
+            echo "Invalid project directory: $PROJECT_DIR" >&2
+            exit 1
+          fi
+          echo "project_dir=$PROJECT_DIR" >> "$GITHUB_OUTPUT"
+      - name: Run deterministic validation
+        run: python scripts/validate_project.py "${{ steps.path.outputs.project_dir }}"
+      - name: Prepare Pages artifact
+        shell: bash
+        run: |
+          mkdir public
+          cp -R "${{ steps.path.outputs.project_dir }}/." public/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy validated project
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,7 +2,7 @@
   "project_name": "BlockParty Board",
   "slug": "blockparty-board",
   "problem": "Neighborhood residents and small community groups have no easy way to announce one-time local events (block parties, garage sales, pop‑up classes) and collect RSVPs without relying on group chats or paper flyers, leading to low attendance and missed connections.",
-  "solution": "A lightweight, mobile‑responsive static web app that lets anyone create a public event card, set date, time, location and limit, and share a short URL. Visitors can RSVP, see who else is attending, and the organizer can edit or delete the event. All data is stored locally in the browser, so no backend is required.",
+  "solution": "A lightweight, mobile-responsive static web app that creates shareable event cards. Public event details are encoded in the URL while event ownership and RSVPs remain local to each browser, so no backend is required.",
   "target_customers": [
     "Residents of apartment complexes or small neighborhoods",
     "Community organizers of local pop‑up events",
@@ -24,9 +24,9 @@
   ],
   "features": [
     "Create event with title, description, date, time, location and optional attendee limit",
-    "Generate shareable short URL (hash‑based) that loads the event from localStorage",
-    "RSVP with name and optional note, view attendee list",
-    "Edit or delete own event via a simple password stored locally",
+    "Generate a shareable hash URL containing public event details",
+    "Save RSVP names and optional notes in the current browser",
+    "Edit or delete events created in the same browser",
     "Responsive design, keyboard navigation, form validation and empty states"
   ],
   "tech_stack": [
@@ -58,7 +58,7 @@
     "social_post": "🚀 Introducing BlockParty Board – a simple, privacy‑first way to post and RSVP to local events. No login, no ads, just a shareable link. Try it now and bring your block together! https://yourusername.github.io/blockparty-board"
   },
   "tests": [
-    "Create an event, share the URL, open it in a new incognito window, RSVP with a name, and verify the attendee appears in the list.",
+    "Create an event, open its share URL in an incognito window, and confirm the event details appear. Add an RSVP and confirm it persists after reloading that same window.",
     "Attempt to create an event with missing title – form should show validation error and prevent submission."
   ],
   "next_improvements": [

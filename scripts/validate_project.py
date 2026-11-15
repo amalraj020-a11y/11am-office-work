@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import re
+import shutil
+import subprocess
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -58,10 +60,21 @@ def main() -> int:
             errors.append("index.html may contain a hard-coded credential")
         if len((project / "README.md").read_text(encoding="utf-8")) < 120:
             errors.append("README.md is too short")
-        if not list(project.rglob("*.css")):
+        css_files = list(project.rglob("*.css"))
+        js_files = list(project.rglob("*.js"))
+        if not css_files:
             errors.append("Project has no CSS file")
-        if not list(project.rglob("*.js")):
+        elif any(path.stat().st_size < 80 for path in css_files):
+            errors.append("Every CSS file must contain meaningful styling")
+        if not js_files:
             errors.append("Project has no JavaScript file")
+        elif any(path.stat().st_size < 80 for path in js_files):
+            errors.append("Every JavaScript file must contain meaningful functionality")
+        elif shutil.which("node"):
+            for path in js_files:
+                result = subprocess.run(["node", "--check", str(path)], capture_output=True, text=True, check=False)
+                if result.returncode:
+                    errors.append(f"JavaScript syntax failed for {path.name}: {result.stderr.strip()}")
     if errors:
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)
