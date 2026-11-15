@@ -1,0 +1,72 @@
+{
+  "project_name": "BlockParty Board",
+  "slug": "blockparty-board",
+  "problem": "Neighborhood residents and small community groups have no easy way to announce one-time local events (block parties, garage sales, pop‑up classes) and collect RSVPs without relying on group chats or paper flyers, leading to low attendance and missed connections.",
+  "solution": "A lightweight, mobile‑responsive static web app that lets anyone create a public event card, set date, time, location and limit, and share a short URL. Visitors can RSVP, see who else is attending, and the organizer can edit or delete the event. All data is stored locally in the browser, so no backend is required.",
+  "target_customers": [
+    "Residents of apartment complexes or small neighborhoods",
+    "Community organizers of local pop‑up events",
+    "Small NGOs running neighborhood workshops"
+  ],
+  "competitors": [
+    {
+      "name": "Nextdoor Events",
+      "url": "",
+      "difference": "Requires account and server backend; our tool is zero‑install, privacy‑first, and works offline.",
+      "verified": false
+    },
+    {
+      "name": "Facebook Events",
+      "url": "",
+      "difference": "Heavy platform, algorithmic feed, data mining; we offer a simple, ad‑free, local‑only solution.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create event with title, description, date, time, location and optional attendee limit",
+    "Generate shareable short URL (hash‑based) that loads the event from localStorage",
+    "RSVP with name and optional note, view attendee list",
+    "Edit or delete own event via a simple password stored locally",
+    "Responsive design, keyboard navigation, form validation and empty states"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a paid tier that hosts events on a custom domain and provides export to CSV for organizers, starting at $2 per month.",
+    "free_tier": "Unlimited public events stored locally, no custom domain, no data export."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repository on GitHub with GitHub Pages enabled",
+    "Share the link in local community newsletters and on neighborhood WhatsApp groups",
+    "Collect feedback via a simple Google Form (external, human‑approved) to iterate"
+  ],
+  "potential_customers": [
+    "Apartment complex managers",
+    "Local hobby clubs",
+    "Pop‑up market organizers"
+  ],
+  "marketing_content": {
+    "tagline": "Your neighborhood’s bulletin board, zero‑setup.",
+    "social_post": "🚀 Introducing BlockParty Board – a simple, privacy‑first way to post and RSVP to local events. No login, no ads, just a shareable link. Try it now and bring your block together! https://yourusername.github.io/blockparty-board"
+  },
+  "tests": [
+    "Create an event, share the URL, open it in a new incognito window, RSVP with a name, and verify the attendee appears in the list.",
+    "Attempt to create an event with missing title – form should show validation error and prevent submission."
+  ],
+  "next_improvements": [
+    "Add optional cloud backup via a free JSON‑bin service for users who want persistence across devices",
+    "Implement QR‑code generation for easy sharing on flyers",
+    "Allow image upload for event banners using Base64 storage"
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-15",
+  "generated_at": "2026-11-15T11:50:30.348490+05:30"
+}
