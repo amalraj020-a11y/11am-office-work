@@ -1,0 +1,73 @@
+{
+  "project_name": "PetPlaydate Matcher",
+  "slug": "petplaydate-matcher",
+  "problem": "Pet owners, especially in apartment complexes or urban neighborhoods, struggle to find compatible playdates for their dogs or cats, leading to missed socialization opportunities, bored pets, and increased stress for owners.",
+  "solution": "A lightweight web app that lets local pet owners create, browse, and join pet playdate events. Users can filter by pet type, size, temperament, location, and time, and RSVP directly. The app stores data locally for privacy and uses simple sharing links for community distribution.",
+  "target_customers": [
+    "Urban pet owners in apartments or condos",
+    "Neighborhood pet clubs",
+    "Pet sitters looking to offer group play sessions"
+  ],
+  "competitors": [
+    {
+      "name": "Meetup",
+      "url": "",
+      "difference": "General events platform; no pet‑specific filters or simple local storage model",
+      "verified": false
+    },
+    {
+      "name": "BarkBuddy",
+      "url": "",
+      "difference": "Dating‑style app for dogs; requires accounts and backend, whereas this is a zero‑backend static tool",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create a playdate with title, date, time, pet type, size, temperament tags",
+    "Browse nearby playdates with filter controls",
+    "RSVP and add personal notes",
+    "Local storage persistence; no server required",
+    "Export/share event link as plain URL for community groups"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a premium add‑on for custom branding and QR‑code generation at $2.99 per month; free tier remains fully functional for basic scheduling.",
+    "free_tier": "All core features remain free; premium adds branding removal and QR code export."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repo on GitHub with GitHub Pages enabled",
+    "Share the link in local apartment community boards and pet‑owner Discord groups",
+    "Collect feedback for premium feature validation"
+  ],
+  "potential_customers": [
+    "Residents of XYZ Apartments",
+    "Members of CityPark Dog Club",
+    "Local cat‑café community"
+  ],
+  "marketing_content": {
+    "tagline": "Make every wag count – schedule pet playdates in a click.",
+    "social_post": "🐾 Tired of lonely pups in the city? MeetPetPlaydate Matcher lets you create and join local pet playdates instantly. No sign‑up, no fees – just fun. Try it now: https://yourusername.github.io/petplaydate-matcher"
+  },
+  "tests": [
+    "Create a new playdate, fill all fields, click Save – the event appears in the list and persists after page reload.",
+    "Apply filter for 'Dog' and size 'Small' – only matching events are shown.",
+    "Click RSVP on an event – the button changes to 'Going' and the count updates."
+  ],
+  "next_improvements": [
+    "Add optional Google Maps embed for location preview",
+    "Implement export to iCal/Google Calendar",
+    "Allow image upload via base64 for pet photos"
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-15",
+  "generated_at": "2026-11-15T23:36:20.473397+05:30"
+}
