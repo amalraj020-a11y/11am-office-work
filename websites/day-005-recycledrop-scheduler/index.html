@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecycleDrop Scheduler</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>RecycleDrop Scheduler</h1>
+  <p>Organize local recycling and bulk‑waste drop‑offs</p>
+</header>
+<main>
+  <section id="create-event">
+    <h2>Schedule a Drop‑off</h2>
+    <form id="event-form" aria-label="Create new drop‑off event">
+      <label for="title">Title</label>
+      <input type="text" id="title" required placeholder="e.g., Electronics Pickup">
+      <label for="date">Date</label>
+      <input type="date" id="date" required>
+      <label for="time">Time</label>
+      <input type="time" id="time" required>
+      <label for="location">Location</label>
+      <input type="text" id="location" required placeholder="Street address or building name">
+      <label for="categories">Item categories (comma separated)</label>
+      <input type="text" id="categories" placeholder="electronics, batteries, furniture">
+      <button type="submit">Add Event</button>
+    </form>
+  </section>
+  <section id="filter-section">
+    <h2>Browse Events</h2>
+    <label for="filter">Filter by category:</label>
+    <input type="text" id="filter" placeholder="e.g., electronics">
+    <ul id="event-list" aria-live="polite"></ul>
+  </section>
+</main>
+<footer>
+  <p>© 2026 RecycleDrop – free & open source</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

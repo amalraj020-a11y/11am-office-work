@@ -1,0 +1,72 @@
+{
+  "project_name": "RecycleDrop Scheduler",
+  "slug": "recycledrop-scheduler",
+  "problem": "Neighborhoods often have periodic recycling or bulk waste collection days, but residents lack a simple way to coordinate extra drop-offs for items like electronics, batteries, or large furniture, leading to missed pickups or illegal dumping.",
+  "solution": "A lightweight, mobile‑responsive static web app where residents can post, view, and sign up for local recycling drop‑off events, filter by item type, and receive browser notifications. All data is stored locally so the site can be hosted for free on GitHub Pages.",
+  "target_customers": [
+    "Urban renters and homeowners who want to responsibly dispose of bulk or hazardous waste",
+    "Community association managers looking to promote organized recycling"
+  ],
+  "competitors": [
+    {
+      "name": "Nextdoor",
+      "url": "",
+      "difference": "Nextdoor is a social network; RecycleDrop focuses solely on scheduling drop‑offs with no ads or unrelated chatter.",
+      "verified": false
+    },
+    {
+      "name": "Freecycle",
+      "url": "",
+      "difference": "Freecycle is a classifieds platform; RecycleDrop provides calendar view, item filters, and RSVP tracking for recycling events.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create a drop‑off event with date, time, location, and item categories",
+    "Browse upcoming events on a list or simple calendar view",
+    "RSVP to events; attendees count is shown",
+    "Filter events by item type (electronics, batteries, furniture, etc.)",
+    "Data persisted in localStorage for offline access"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer premium community packs (custom branding, PDF export of event list) for $2 per month after 2,000 active users.",
+    "free_tier": "All core scheduling, filtering, and RSVP features remain free."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish the repo on GitHub and enable GitHub Pages",
+    "Share the link in local community newsletters and on neighborhood Facebook groups",
+    "Gather feedback from 5 early users and iterate UI based on their input"
+  ],
+  "potential_customers": [
+    "Apartment complexes with shared waste rooms",
+    "Housing co‑ops",
+    "Neighborhood association boards"
+  ],
+  "marketing_content": {
+    "tagline": "Turn clutter into clean – schedule community recycling in seconds.",
+    "social_post": "🚮 Introducing RecycleDrop Scheduler – a free, no‑login tool for neighbors to organize bulk and hazardous waste drop‑offs. Simple list, RSVP, and stay on schedule. Try it now at https://yourusername.github.io/recycledrop-scheduler"
+  },
+  "tests": [
+    "Create an event, close the browser, reopen – the event should still appear (localStorage persistence).",
+    "Filter events by 'Electronics' – only events containing that category should be listed.",
+    "RSVP to an event – attendee count should increment and persist across reloads."
+  ],
+  "next_improvements": [
+    "Add a lightweight calendar widget for date picking",
+    "Implement optional email reminders using a serverless function (future paid tier)",
+    "Allow export of the event list as a PDF for community bulletin boards"
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-16",
+  "generated_at": "2026-11-16T12:35:59.978733+05:30"
+}
