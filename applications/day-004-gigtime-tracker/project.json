@@ -1,0 +1,74 @@
+{
+  "project_name": "GigTime Tracker",
+  "slug": "gigtime-tracker",
+  "problem": "Gig and freelance workers often juggle multiple short‑term jobs but lack a simple, offline‑first tool to log hours, track earnings per client, and generate invoices, leading to lost income and administrative hassle.",
+  "solution": "A lightweight, mobile‑responsive web app that lets users add clients, create jobs, start/stop timers, edit entries, and export CSV invoices—all stored locally in the browser with optional cloud backup via manual file import/export.",
+  "target_customers": [
+    "gig workers",
+    "freelancers",
+    "part‑time contractors"
+  ],
+  "competitors": [
+    {
+      "name": "Toggl Track",
+      "url": "",
+      "difference": "Toggl requires an online account and subscription for full features; GigTime works fully offline and is free for basic tracking.",
+      "verified": false
+    },
+    {
+      "name": "Harvest",
+      "url": "",
+      "difference": "Harvest is a paid SaaS with team features; GigTime is a single‑user static app with no recurring fees.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Add / edit clients and hourly rates",
+    "Create jobs and start/stop timers",
+    "Manual entry editing and deletion",
+    "Summary view of total hours and earnings per client",
+    "Export data as CSV for invoicing",
+    "Local storage persistence with optional JSON import/export"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a paid ‘Pro’ version that adds PDF invoice generation and multi‑device sync via a tiny paid backend; test conversion at 5% of active users paying $4/month.",
+    "free_tier": "All core tracking, client management, CSV export, and local storage are free forever."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repository on GitHub with GitHub Pages enabled",
+    "Share on freelancer forums (r/freelance, r/sidehustle) and social media groups",
+    "Collect feedback via a simple Google Form linked from the app"
+  ],
+  "potential_customers": [
+    "Ride‑share drivers tracking extra gigs",
+    "Graphic designers handling multiple client projects",
+    "Content creators doing short video contracts"
+  ],
+  "marketing_content": {
+    "tagline": "Track every gig, earn every minute.",
+    "social_post": "🚀 Introducing GigTime Tracker – the free, offline‑first app for freelancers to log hours, see earnings per client, and export CSV invoices in seconds. No login, no subscription. Try it now at https://yourusername.github.io/gigtime-tracker"
+  },
+  "tests": [
+    "Open the app, add a client named 'Acme Corp' with $30/hr, create a job, start timer for 2 minutes, stop, verify that total hours = 0.03 and earnings = $0.90 in the summary.",
+    "Refresh the page, confirm that the entry persists via localStorage.",
+    "Export CSV, open in spreadsheet, ensure columns: Date, Client, Job, Hours, Rate, Earnings are present and values match the logged entry."
+  ],
+  "next_improvements": [
+    "Add dark mode toggle",
+    "Implement PDF invoice template generation",
+    "Sync data across devices via a low‑cost backend (e.g., Firebase free tier)"
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-16",
+  "generated_at": "2026-11-16T23:54:38.746666+05:30"
+}
