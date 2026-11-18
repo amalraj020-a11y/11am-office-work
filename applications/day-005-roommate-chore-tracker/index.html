@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roommate Chore Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Roommate Chore Tracker</h1>
+</header>
+<main>
+<section id="chore-form" aria-labelledby="form-title">
+<h2 id="form-title">Add / Edit Chore</h2>
+<form id="form">
+<label for="title">Chore title</label>
+<input type="text" id="title" name="title" required>
+<label for="assignee">Assign to</label>
+<input type="text" id="assignee" name="assignee" required>
+<label for="recurrence">Recurrence</label>
+<select id="recurrence" name="recurrence">
+<option value="none">None</option>
+<option value="daily">Daily</option>
+<option value="weekly">Weekly</option>
+<option value="monthly">Monthly</option>
+</select>
+<button type="submit">Save Chore</button>
+<button type="button" id="cancel-edit" class="hidden">Cancel</button>
+</form>
+</section>
+<section id="chore-list" aria-labelledby="list-title">
+<h2 id="list-title">Active Chores</h2>
+<ul id="active-list"></ul>
+</section>
+<section id="completed-list" aria-labelledby="completed-title">
+<h2 id="completed-title">Completed</h2>
+<ul id="completed"></ul>
+</section>
+<section id="data-tools">
+<h2>Data Tools</h2>
+<button id="export">Export JSON</button>
+<input type="file" id="import-file" accept="application/json" style="display:none;">
+<button id="import">Import JSON</button>
+</section>
+</main>
+<footer>
+<p>© 2026 Roommate Chore Tracker – Free &amp; Open Source</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

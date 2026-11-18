@@ -1,0 +1,78 @@
+{
+  "project_name": "Roommate Chore Tracker",
+  "slug": "roommate-chore-tracker",
+  "problem": "Roommates often forget or argue about household chores, leading to tension and uneven workload distribution because there is no simple shared tool to assign, track, and confirm completion of chores.",
+  "solution": "A lightweight offline‑first web app that lets roommates create a shared chore list, assign tasks, set recurrence, and mark completion. Data is stored locally and can be synced manually via QR code or copy‑paste for small groups.",
+  "target_customers": [
+    "College students sharing apartments",
+    "Young professionals in shared housing"
+  ],
+  "competitors": [
+    {
+      "name": "OurHome",
+      "url": "",
+      "difference": "OurHome is a mobile app with cloud sync and paid premium; this product is a static web app with no backend, free and privacy‑first.",
+      "verified": false
+    },
+    {
+      "name": "Tody",
+      "url": "",
+      "difference": "Tody focuses on personal cleaning schedules; ours is collaborative for multiple housemates with simple sharing.",
+      "verified": false
+    },
+    {
+      "name": "Flatmate",
+      "url": "",
+      "difference": "Flatmate includes rent splitting and chat; we focus solely on chore management with zero‑install web access.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create, edit, and delete chores",
+    "Assign chores to any housemate",
+    "Set daily/weekly/monthly recurrence",
+    "Mark chores as completed with timestamp",
+    "Export/import data as JSON for manual sync",
+    "Responsive design for phone and desktop"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a paid \"Pro\" version that adds cloud sync via a low‑cost third‑party storage API and custom themes; 5% of active users may upgrade at $2.99/month.",
+    "free_tier": "All core features remain free; no ads, no data collection."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free-tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repository on GitHub with GitHub Pages enabled",
+    "Share the link in university housing forums and Reddit r/roommates",
+    "Collect feedback via a short Google Form and iterate"
+  ],
+  "potential_customers": [
+    "University housing offices",
+    "Co‑living startup incubators",
+    "Student housing Facebook groups"
+  ],
+  "marketing_content": {
+    "tagline": "Keep the peace, share the chores.",
+    "social_post": "Tired of chore wars with your roommates? 🎯 Try Roommate Chore Tracker – a free, privacy‑first web app that lets you assign, schedule, and confirm chores together. No app store, no login, just a link you can share. #Roommates #Productivity"
+  },
+  "tests": [
+    "Create a new chore, assign to \"Alex\", set weekly recurrence, mark completed – verify it appears in the completed list with correct date.",
+    "Export data, clear local storage, import the same JSON – verify all chores and assignments are restored."
+  ],
+  "next_improvements": [
+    "Add QR code based data sharing for quick sync between devices",
+    "Implement optional email reminders for upcoming chores",
+    "Provide a simple analytics view of chore distribution per housemate"
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-19",
+  "generated_at": "2026-11-19T05:00:52.210827+05:30"
+}

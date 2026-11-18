@@ -1,0 +1,19 @@
+/* Basic reset */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.5;background:#f9f9f9;color:#333;padding:1rem}
+header{text-align:center;margin-bottom:1rem}
+h1{font-size:2rem;color:#2c3e50}
+main{max-width:800px;margin:auto}
+section{background:#fff;padding:1rem;margin-bottom:1rem;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+form{display:grid;grid-template-columns:1fr;gap:.5rem}
+label{font-weight:bold}
+input,select,button{padding:.5rem;font-size:1rem;border:1px solid #ccc;border-radius:4px}
+button{background:#3498db;color:#fff;cursor:pointer;border:none}
+button:hover{background:#2980b9}
+.hidden{display:none}
+ul{list-style:none}
+li{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid #eee}
+li:last-child{border-bottom:none}
+.actions button{margin-left:.5rem;background:#e74c3c}
+.actions button:hover{background:#c0392b}
+@media (max-width:600px){h1{font-size:1.5rem}}
