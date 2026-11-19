@@ -1,0 +1,73 @@
+{
+  "project_name": "VolunteerMatch Local",
+  "slug": "volunteermatch-local",
+  "problem": "Community events and small NGOs need volunteers, but organizers struggle to find local people with matching availability and skills, while volunteers waste time searching scattered flyers and group chats.",
+  "solution": "A lightweight offline‑first web app where organizers post volunteer slots with required skills and time, and locals browse, filter, and claim spots. Claims are stored in localStorage and can be exported as a CSV for organizers.",
+  "target_customers": [
+    "Community organizers of small events",
+    "Local volunteers looking for micro‑volunteering opportunities"
+  ],
+  "competitors": [
+    {
+      "name": "VolunteerMatch",
+      "url": "",
+      "difference": "National platform with complex onboarding; our app is ultra‑simple, no accounts, local‑only, works offline",
+      "verified": false
+    },
+    {
+      "name": "SignUpGenius",
+      "url": "",
+      "difference": "Focuses on schools and larger groups; we target micro‑events and provide instant CSV export without login",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create volunteer slots with title, description, required skill tags, date & time, and needed number of people",
+    "Browse and filter slots by skill, date, and distance (manual entry)",
+    "Claim a slot; claim stored locally and displayed in a personal dashboard",
+    "Export all claimed slots as a CSV for sharing with organizers",
+    "Responsive design works on phones and desktops"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a paid premium version for organizers that adds QR‑code generation for event check‑in and unlimited slot storage; free tier limited to 20 slots per month",
+    "free_tier": "All volunteer browsing and claiming features remain free; organizers can create up to 20 slots without payment"
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish the site on GitHub Pages and share the link in local community Facebook groups and neighborhood newsletters",
+    "Gather feedback from 2‑3 small events and iterate UI based on volunteer experience"
+  ],
+  "potential_customers": [
+    "Neighborhood block parties",
+    "Community garden clean‑ups",
+    "Local school fundraisers",
+    "Small NGOs running pop‑up clinics"
+  ],
+  "marketing_content": {
+    "tagline": "Find a local way to help – instantly, no login required.",
+    "social_post": "🚀 Introducing VolunteerMatch Local – the simplest way to discover nearby volunteer spots and claim a role in seconds. No accounts, works offline, and you can export your commitments as a CSV for organizers. Try it now and make your next community event a success! #Volunteer #LocalHelp"
+  },
+  "tests": [
+    "Create a new slot, refresh page, ensure slot persists (stored in localStorage).",
+    "Filter slots by a skill tag and verify only matching slots appear.",
+    "Claim a slot, then open the dashboard and see the claim listed.",
+    "Export CSV and open in spreadsheet; claimed slot details should be present."
+  ],
+  "next_improvements": [
+    "Add optional geolocation to auto‑filter nearby events",
+    "Implement simple password‑protected organizer mode to hide slots from public view",
+    "Sync claims via a small backend for multi‑device persistence (future)"
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-20",
+  "generated_at": "2026-11-20T05:14:50.998041+05:30"
+}

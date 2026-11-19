@@ -1,0 +1,17 @@
+/* Basic reset */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;line-height:1.5;background:#f9f9f9;color:#333;padding:1rem}
+header{text-align:center;margin-bottom:1rem}
+h1{font-size:2rem;color:#2c3e50}
+main{max-width:800px;margin:auto;display:grid;gap:2rem}
+section{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+form{display:grid;gap:0.5rem}
+label{font-weight:bold}
+input,textarea,button{padding:0.5rem;font-size:1rem;border:1px solid #ccc;border-radius:4px}
+button{background:#27ae60;color:#fff;cursor:pointer;border:none}
+button:hover{background:#219150}
+ul{list-style:none;margin-top:0.5rem}
+li{border-bottom:1px solid #eee;padding:0.5rem 0}
+li:last-child{border:none}
+.filters{display:flex;gap:0.5rem;margin-bottom:0.5rem}
+@media (max-width:600px){main{grid-template-columns:1fr}}

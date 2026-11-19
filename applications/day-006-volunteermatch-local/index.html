@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VolunteerMatch Local</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>VolunteerMatch Local</h1>
+</header>
+<main>
+<section id="create-slot" aria-labelledby="create-slot-title">
+<h2 id="create-slot-title">Create Volunteer Slot (Organizer)</h2>
+<form id="slot-form">
+<label for="title">Title</label>
+<input type="text" id="title" required>
+<label for="desc">Description</label>
+<textarea id="desc" rows="3" required></textarea>
+<label for="skill">Required Skill (comma separated)</label>
+<input type="text" id="skill" placeholder="e.g., setup, cooking" required>
+<label for="date">Date</label>
+<input type="date" id="date" required>
+<label for="time">Time</label>
+<input type="time" id="time" required>
+<label for="need">Number Needed</label>
+<input type="number" id="need" min="1" value="1" required>
+<button type="submit">Add Slot</button>
+</form>
+</section>
+<section id="browse" aria-labelledby="browse-title">
+<h2 id="browse-title">Available Slots</h2>
+<div class="filters">
+<input type="text" id="filter-skill" placeholder="Filter by skill">
+<input type="date" id="filter-date">
+<button id="apply-filters">Apply</button>
+<button id="clear-filters">Clear</button>
+</div>
+<ul id="slot-list"></ul>
+</section>
+<section id="my-claims" aria-labelledby="my-claims-title">
+<h2 id="my-claims-title">My Claims</h2>
+<ul id="claim-list"></ul>
+<button id="export-csv">Export CSV</button>
+</section>
+</main>
+<footer>
+<p>&copy; 2026 VolunteerMatch Local</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
