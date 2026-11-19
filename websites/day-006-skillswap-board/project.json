@@ -1,0 +1,79 @@
+{
+  "project_name": "SkillSwap Board",
+  "slug": "skillswap-board",
+  "problem": "Neighborhood residents often have useful skills (e.g., guitar lessons, gardening help, coding tutoring) but lack a simple, local platform to advertise, discover, and schedule skill exchanges, leading to missed learning opportunities and underutilized talent.",
+  "solution": "A lightweight static website where users can post skill offers or requests, browse nearby listings, and arrange meet‑ups via a built‑in calendar. All data is stored locally in the browser, keeping it free, private, and instantly usable without sign‑up.",
+  "target_customers": [
+    "Urban renters",
+    "Suburban families",
+    "Community center members"
+  ],
+  "competitors": [
+    {
+      "name": "Nextdoor",
+      "url": "",
+      "difference": "Nextdoor is a broad social network; SkillSwap focuses solely on skill exchange with simple scheduling and no login.",
+      "verified": false
+    },
+    {
+      "name": "Meetup",
+      "url": "",
+      "difference": "Meetup organizes groups/events; SkillSwap is a personal one‑to‑one barter board with calendar integration.",
+      "verified": false
+    },
+    {
+      "name": "Skillshare (online)",
+      "url": "",
+      "difference": "Online classes, not local in‑person exchanges; SkillSwap connects neighbors for face‑to‑face learning.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Post a skill offer or request with description, category, and optional price",
+    "Search and filter listings by category and distance (based on ZIP code)",
+    "Add a proposed meeting date/time via an interactive calendar widget",
+    "Save favorite listings and view scheduled meet‑ups",
+    "Responsive design for mobile and desktop"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a premium badge for $2/month that highlights listings at the top of search results.",
+    "free_tier": "All core features remain free; premium only adds visual prominence."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free-tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repo on GitHub and enable GitHub Pages",
+    "Share launch post in local community Facebook groups and Nextdoor neighborhoods",
+    "Gather feedback from 5‑10 early users to refine UI and add optional ZIP‑code distance filter"
+  ],
+  "potential_customers": [
+    "Residents of apartment complexes looking for language tutoring",
+    "Parents wanting extracurricular lessons for kids",
+    "Retirees offering hobby workshops"
+  ],
+  "marketing_content": {
+    "tagline": "Learn locally, share freely.",
+    "social_post": "🚀 Introducing SkillSwap Board – your neighborhood hub for trading skills face‑to‑face! Post what you can teach, request what you want to learn, and schedule meet‑ups instantly. No sign‑up, no fees. Try it now at https://yourusername.github.io/skillswap-board"
+  },
+  "tests": [
+    "Open the site, click 'Add Listing', fill all fields, and submit – the new card appears in the list and persists after refresh.",
+    "Use the search bar to filter by category – only matching cards remain visible.",
+    "Click the calendar icon on a listing, pick a date, and verify the selected date shows under the card."
+  ],
+  "next_improvements": [
+    "Add optional ZIP‑code based distance sorting using a simple static list of neighborhoods.",
+    "Implement email sharing of listing links via mailto: for offline coordination.",
+    "Provide a printable QR code for each listing to share in community bulletin boards."
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-19",
+  "generated_at": "2026-11-19T20:08:42.283580+05:30"
+}
