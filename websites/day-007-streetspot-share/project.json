@@ -1,0 +1,73 @@
+{
+  "project_name": "StreetSpot Share",
+  "slug": "streetspot-share",
+  "problem": "Urban residents and commuters often struggle to find safe, affordable short‑term parking near their destination, while homeowners with unused driveway space have no easy way to advertise and monetize those spots.",
+  "solution": "A lightweight, static web app that lets users list, browse, and reserve nearby driveway or curbside parking spots for a few hours or a day, storing data locally for demo purposes and allowing export/import of listings.",
+  "target_customers": [
+    "Urban commuters",
+    "Homeowners with spare driveway space",
+    "Apartment complex managers"
+  ],
+  "competitors": [
+    {
+      "name": "SpotHero",
+      "url": "",
+      "difference": "SpotHero relies on paid integrations with garages; StreetSpot Share is community‑driven, free, and runs entirely on static hosting.",
+      "verified": false
+    },
+    {
+      "name": "ParkWhiz",
+      "url": "",
+      "difference": "ParkWhiz aggregates commercial lots; our focus is residential curbside spots and peer‑to‑peer sharing.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create a parking spot listing with address, time window, price, and optional photo URL",
+    "Search listings by ZIP code and date range",
+    "Reserve a spot (stores reservation in localStorage)",
+    "Export and import listings as JSON for simple data persistence",
+    "Responsive design for mobile and desktop"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Charge a small transaction fee (e.g., 5%) on paid reservations once a payment gateway is added, while keeping basic listings free.",
+    "free_tier": "Unlimited free listings and reservations; premium features like highlighted listings and analytics later."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish the repo on GitHub and enable GitHub Pages",
+    "Share the link in local community forums and neighborhood Facebook groups",
+    "Collect feedback and iterate on UI/UX before adding any paid features"
+  ],
+  "potential_customers": [
+    "City commuters looking for cheap curbside parking",
+    "Homeowners with unused driveway space",
+    "Small property managers"
+  ],
+  "marketing_content": {
+    "tagline": "Find a Spot, Share a Spot – Simple Parking for Neighbours",
+    "social_post": "🚗 Tired of circling the block for a spot? Meet StreetSpot Share – a free, community‑driven way to list and reserve driveway parking right in your neighbourhood. No apps, no fees, just a simple web page. Try it now! #ParkingMadeEasy"
+  },
+  "tests": [
+    "Create a new listing, then refresh the page – the listing persists via localStorage.",
+    "Search for a ZIP code with no listings – the UI shows an empty state message.",
+    "Reserve a spot and then reload – the reservation remains stored and is reflected in the UI."
+  ],
+  "next_improvements": [
+    "Add a lightweight backend (e.g., Firebase) for real‑time sharing across devices",
+    "Implement map view with OpenStreetMap tiles",
+    "Introduce user accounts with email verification for trust"
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-20",
+  "generated_at": "2026-11-20T19:46:15.724788+05:30"
+}
