@@ -1,0 +1,66 @@
+{
+  "project_name": "Community Kitchen Planner",
+  "slug": "community-kitchen-planner",
+  "problem": "Neighborhoods with shared community kitchens often face chaotic scheduling, overlapping bookings, and lack of visibility into available cooking slots, leading to underutilized resources and conflicts among residents.",
+  "solution": "A simple static web app that lets residents view a weekly calendar of kitchen slots, claim a slot, add a dish description, and see who else is cooking, all stored locally with optional export for offline sharing.",
+  "target_customers": [
+    "Residents of housing complexes or co‑ops with a shared kitchen",
+    "Community organizers managing communal cooking events"
+  ],
+  "competitors": [
+    {
+      "name": "Community Kitchen Scheduler",
+      "url": "",
+      "difference": "Focuses on paid SaaS with login; our tool is free, static, and works offline with localStorage.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Weekly calendar view with 30‑minute slots",
+    "Slot claim with dish name and optional notes",
+    "LocalStorage persistence and export/import JSON",
+    "Responsive design for mobile and desktop",
+    "Accessible keyboard navigation and ARIA labels"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a paid 'Pro' version that syncs calendars across devices via a low‑cost cloud storage API after validation.",
+    "free_tier": "All core features work fully offline with localStorage; no limits on number of slots or users on a single device."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Create a public repo on GitHub and enable GitHub Pages",
+    "Share the link in local housing‑complex newsletters and community boards",
+    "Gather feedback via a short Google Form linked from the site"
+  ],
+  "potential_customers": [
+    "Housing co‑ops with shared kitchens",
+    "Neighborhood associations",
+    "Cultural community centers"
+  ],
+  "marketing_content": {
+    "tagline": "Cook together, schedule smarter – free kitchen slots for every neighbor.",
+    "social_post": "🚀 Launching Community Kitchen Planner – a free, offline‑first tool to book kitchen time, share dishes, and avoid clashes. Perfect for co‑ops, community centers, and anyone with a shared kitchen. Try it now at https://yourusername.github.io/community-kitchen-planner"
+  },
+  "tests": [
+    "Open the site, click an empty slot, enter a dish name, and save – the slot should display the dish and persist after refresh.",
+    "Resize the browser to mobile width – the calendar should reflow into a single column and remain usable.",
+    "Use keyboard Tab to focus a slot and press Enter – the claim dialog opens, confirming keyboard accessibility."
+  ],
+  "next_improvements": [
+    "Add iCal/Google Calendar export for each user's booked slots",
+    "Implement optional password‑protected sharing of the JSON file for multi‑device sync",
+    "Introduce a simple rating system for dishes to encourage community interaction"
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-21",
+  "generated_at": "2026-11-21T19:09:49.941121+05:30"
+}
