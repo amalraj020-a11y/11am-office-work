@@ -1,0 +1,80 @@
+{
+  "project_name": "MicroEvent RSVP",
+  "slug": "microevent-rsvp",
+  "problem": "Small community groups (HOAs, clubs, hobby circles) need a simple way to announce one‑off events, collect RSVPs, manage waitlists and share details without paying for complex ticketing platforms or relying on fragmented group chats.",
+  "solution": "A lightweight, mobile‑responsive static website that lets organizers create an event page, set a capacity, and lets visitors RSVP instantly. Data is stored locally in the browser (localStorage) so the site works fully offline and costs nothing to host.",
+  "target_customers": [
+    "Neighborhood associations",
+    "Club organizers",
+    "Local hobby groups",
+    "Community centers"
+  ],
+  "competitors": [
+    {
+      "name": "Eventbrite",
+      "url": "",
+      "difference": "Heavy feature set, fees per ticket, requires account; our tool is free, zero‑fee, no sign‑up, single‑event focus.",
+      "verified": false
+    },
+    {
+      "name": "Meetup.com",
+      "url": "",
+      "difference": "Subscription model, broader community focus; we target a single local event with no recurring fees.",
+      "verified": false
+    },
+    {
+      "name": "Google Forms RSVP templates",
+      "url": "",
+      "difference": "No capacity enforcement or waitlist automation; our UI handles those automatically.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create an event with title, description, date, time, location and capacity",
+    "RSVP form with name and email validation",
+    "Automatic waitlist when capacity is reached",
+    "LocalStorage persistence – data survives page reloads and works offline",
+    "Responsive design for phones and desktops",
+    "Accessible form fields and keyboard navigation"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a paid custom‑branding package ($5 per event) for groups that want their own logo/color scheme, while the core RSVP remains free.",
+    "free_tier": "Unlimited free events with default styling, no branding, no ads."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish the repo on GitHub, enable GitHub Pages, and share the link in local HOA newsletters and community Facebook groups.",
+    "Collect feedback from 3 pilot events and iterate on UI before announcing the branding add‑on."
+  ],
+  "potential_customers": [
+    "HOA board members",
+    "Yoga studio owners",
+    "Parent‑teacher association event planners"
+  ],
+  "marketing_content": {
+    "tagline": "One‑click RSVP for neighborhood events – free, fast, no fees.",
+    "social_post": "🚀 Launching MicroEvent RSVP – a zero‑cost, no‑login web page for your next block party, club meetup, or community workshop. Set capacity, collect RSVPs, and manage waitlists instantly. Try it now at https://yourusername.github.io/microevent-rsvp"
+  },
+  "tests": [
+    "Open the site, fill in the event creation form, submit – the event card appears with correct details.",
+    "Add 5 RSVPs to an event with capacity 3 – first 3 appear as confirmed, last 2 appear in the waitlist section.",
+    "Refresh the page – all data (event and RSVPs) persists."
+  ],
+  "next_improvements": [
+    "Add optional email notification using a third‑party mailto link or Zapier integration.",
+    "Support multiple events per site with a simple navigation menu.",
+    "Add dark‑mode theme toggle."
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-22",
+  "generated_at": "2026-11-22T19:02:02.788321+05:30"
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MicroEvent RSVP</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>MicroEvent RSVP</h1>
+  </header>
+  <main>
+    <section id="create-event">
+      <h2>Create Event</h2>
+      <form id="event-form" aria-label="Create event form">
+        <label for="title">Title</label>
+        <input type="text" id="title" required>
+        <label for="date">Date</label>
+        <input type="date" id="date" required>
+        <label for="time">Time</label>
+        <input type="time" id="time" required>
+        <label for="location">Location</label>
+        <input type="text" id="location" required>
+        <label for="capacity">Capacity</label>
+        <input type="number" id="capacity" min="1" required>
+        <label for="description">Description</label>
+        <textarea id="description" rows="3"></textarea>
+        <button type="submit">Create Event</button>
+      </form>
+    </section>
+    <section id="event-display" class="hidden">
+      <h2 id="event-title"></h2>
+      <p id="event-details"></p>
+      <p id="event-description"></p>
+      <h3>RSVP</h3>
+      <form id="rsvp-form" aria-label="RSVP form">
+        <label for="rsvp-name">Name</label>
+        <input type="text" id="rsvp-name" required>
+        <label for="rsvp-email">Email</label>
+        <input type="email" id="rsvp-email" required>
+        <button type="submit">Submit RSVP</button>
+      </form>
+      <div id="rsvp-lists">
+        <div>
+          <h4>Confirmed (<span id="confirmed-count">0</span>)</h4>
+          <ul id="confirmed-list"></ul>
+        </div>
+        <div>
+          <h4>Waitlist (<span id="waitlist-count">0</span>)</h4>
+          <ul id="waitlist"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 MicroEvent RSVP – free and open source</p>
+  </footer>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* Basic reset */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;line-height:1.5;background:#f9f9f9;color:#333;padding:1rem}
+header{text-align:center;margin-bottom:1rem}
+h1{font-size:2rem;color:#2c3e50}
+main{max-width:600px;margin:auto;background:#fff;padding:1rem;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+section{margin-bottom:2rem}
+label{display:block;margin-top:.5rem;font-weight:bold}
+input,textarea,button{width:100%;padding:.5rem;margin-top:.25rem;border:1px solid #ccc;border-radius:4px}
+button{background:#27ae60;color:#fff;border:none;cursor:pointer;margin-top:1rem}
+button:hover{background:#219150}
+.hidden{display:none}
+#rsvp-lists{display:flex;gap:1rem;flex-wrap:wrap}
+#rsvp-lists div{flex:1;min-width:200px}
+ul{list-style:none;margin-top:.5rem}
+li{background:#ecf0f1;padding:.5rem;margin-bottom:.25rem;border-radius:4px}
+footer{text-align:center;margin-top:2rem;font-size:.9rem;color:#777}
