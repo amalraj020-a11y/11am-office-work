@@ -1,0 +1,73 @@
+{
+  "project_name": "Simple Invoice Builder",
+  "slug": "simple-invoice-builder",
+  "problem": "Freelancers and gig workers need a quick, offline‑first way to create professional invoices without complex software or paid services, often ending up with ad‑hoc spreadsheets that look unprofessional.",
+  "solution": "A static web app that lets users input client, service, and rate details, generates a printable PDF‑like invoice, and stores past invoices in localStorage for reuse.",
+  "target_customers": [
+    "freelancers",
+    "gig workers",
+    "small consultants"
+  ],
+  "competitors": [
+    {
+      "name": "Invoice Ninja",
+      "url": "",
+      "difference": "Full SaaS with recurring fees; our tool is free, static, no backend.",
+      "verified": false
+    },
+    {
+      "name": "Wave Invoicing",
+      "url": "",
+      "difference": "Offers accounting suite; we focus solely on quick invoice creation offline.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create invoice with client, service line items, tax, and totals",
+    "Live preview and printable view",
+    "Save invoices locally and reload for editing",
+    "Responsive design for mobile and desktop",
+    "Keyboard‑friendly form with validation"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a paid export to PDF feature after 100 free invoices per year.",
+    "free_tier": "Unlimited invoice creation, local storage, and printing"
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repo on GitHub and enable GitHub Pages",
+    "Share on freelancer forums, Reddit r/freelance, and LinkedIn groups",
+    "Collect feedback via a short Google Form linked from the app"
+  ],
+  "potential_customers": [
+    "freelance graphic designers",
+    "ride‑share drivers offering services",
+    "independent tutors"
+  ],
+  "marketing_content": {
+    "tagline": "Professional invoices in seconds, no account needed.",
+    "social_post": "🚀 Launching Simple Invoice Builder – a free, offline‑first web app for freelancers to create clean, printable invoices in seconds. No sign‑up, no fees. Try it now! https://yourusername.github.io/simple-invoice-builder/"
+  },
+  "tests": [
+    "Enter valid client data and line items → preview updates with correct totals and tax.",
+    "Leave required fields empty → form shows validation messages and prevents preview.",
+    "Refresh page after creating invoices → saved invoices reappear in the list."
+  ],
+  "next_improvements": [
+    "Add PDF generation using jsPDF library",
+    "Support multiple currencies and custom branding",
+    "Sync invoices via optional Google Drive backup"
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-23",
+  "generated_at": "2026-11-23T04:14:02.215012+05:30"
+}

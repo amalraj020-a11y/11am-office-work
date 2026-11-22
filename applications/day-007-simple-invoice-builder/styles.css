@@ -1,0 +1,19 @@
+/* Basic reset */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.5;background:#f9f9f9;color:#333;padding:1rem}
+header{text-align:center;margin-bottom:1rem}
+h1{font-size:2rem}
+main{max-width:800px;margin:auto}
+section{background:#fff;padding:1rem;margin-bottom:1rem;border-radius:4px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+.field-group{margin-bottom:0.75rem;display:flex;flex-direction:column}
+label{margin-bottom:0.25rem;font-weight:bold}
+input{padding:0.5rem;border:1px solid #ccc;border-radius:4px}
+.error{color:#d00;font-size:0.85rem;height:1em}
+button{padding:0.5rem 1rem;margin-top:0.5rem;margin-right:0.5rem;border:none;background:#0066cc;color:#fff;border-radius:4px;cursor:pointer}
+button:hover{background:#0055aa}
+.hidden{display:none}
+.invoice-box{border:1px solid #ddd;padding:1rem}
+.invoice-header{display:flex;justify-content:space-between;margin-bottom:1rem}
+.invoice-items table{width:100%;border-collapse:collapse}
+.invoice-items th,.invoice-items td{border:1px solid #ddd;padding:0.5rem;text-align:left}
+@media(max-width:600px){.invoice-header{flex-direction:column;align-items:flex-start}}
