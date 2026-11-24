@@ -1,0 +1,72 @@
+{
+  "project_name": "PickupPlay",
+  "slug": "pickupplay",
+  "problem": "Neighbors and small community groups want to organize informal sports pickup games (e.g., basketball, soccer, badminton) but lack a simple tool to propose a game, collect RSVPs, set a time, and manage last‑minute changes, leading to low turnout and wasted effort.",
+  "solution": "PickupPlay is a lightweight, offline‑first web app that lets a host create a game event, specify sport, location, date, and time, and share a short link. Participants can RSVP, add comments, and the host can see a real‑time attendee list. All data is stored locally in the browser, so no backend is required.",
+  "target_customers": [
+    "urban residents who play informal sports",
+    "community center organizers",
+    "park enthusiasts"
+  ],
+  "competitors": [
+    {
+      "name": "Meetup",
+      "url": "",
+      "difference": "Meetup is a broad social platform with paid plans and requires an account; PickupPlay is free, no login, focused on quick sports games.",
+      "verified": false
+    },
+    {
+      "name": "TeamSnap",
+      "url": "",
+      "difference": "TeamSnap targets organized teams and charges per season; PickupPlay is for ad‑hoc games with zero cost.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create game event with sport, location, date, time",
+    "Generate shareable link",
+    "RSVP with optional note",
+    "Host view of attendee list",
+    "Local storage persistence",
+    "Responsive mobile UI"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a premium add‑on that lets hosts export attendee lists as CSV and remove the branding after a $2.99 one‑time purchase.",
+    "free_tier": "All core features remain free; premium is optional."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repo on GitHub, enable GitHub Pages, share the link in local park community groups and on neighborhood subreddits.",
+    "Gather feedback from 5‑10 users and iterate."
+  ],
+  "potential_customers": [
+    "local park users",
+    "college dorm residents",
+    "neighborhood association members"
+  ],
+  "marketing_content": {
+    "tagline": "Turn a casual invite into a full‑court game.",
+    "social_post": "🚀 Introducing PickupPlay – the fastest way to set up a basketball, soccer, or badminton game with your neighbors. No login, no fees, just a link and a game. Try it now and get the ball rolling! #CommunitySports #FreeApp"
+  },
+  "tests": [
+    "Create a new game, copy the link, open it in a second browser tab, RSVP as a participant, and verify the host view shows the name.",
+    "Refresh the page and ensure the event persists via localStorage."
+  ],
+  "next_improvements": [
+    "Add optional email reminders (via mailto links)",
+    "Allow multiple concurrent events per user",
+    "Implement dark mode"
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-24",
+  "generated_at": "2026-11-24T08:57:45.043992+05:30"
+}

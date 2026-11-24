@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PickupPlay - Sports Game Organizer</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>PickupPlay</h1>
+<p class="tagline">Turn a casual invite into a full‑court game.</p>
+</header>
+<main id="app">
+<div id="create-view" class="view">
+<h2>Create a Game</h2>
+<form id="create-form" novalidate>
+<label for="sport">Sport</label>
+<select id="sport" required>
+<option value="">Select sport</option>
+<option>Basketball</option>
+<option>Soccer</option>
+<option>Badminton</option>
+<option>Volleyball</option>
+</select>
+<label for="location">Location (e.g., Park name)</label>
+<input type="text" id="location" required placeholder="Park Central">
+<label for="date">Date</label>
+<input type="date" id="date" required>
+<label for="time">Time</label>
+<input type="time" id="time" required>
+<button type="submit">Create &amp; Get Link</button>
+</form>
+<div id="link-section" class="hidden">
+<p>Share this link with players:</p>
+<input type="text" id="share-link" readonly>
+<button id="copy-btn">Copy</button>
+</div>
+</div>
+<div id="event-view" class="view hidden">
+<h2 id="event-title"></h2>
+<p id="event-details"></p>
+<h3>Players</h3>
+<ul id="player-list"></ul>
+<form id="rsvp-form" novalidate>
+<label for="player-name">Your Name</label>
+<input type="text" id="player-name" required placeholder="John Doe">
+<label for="note">Note (optional)</label>
+<input type="text" id="note" placeholder="Will bring a ball">
+<button type="submit">Join Game</button>
+</form>
+</div>
+</main>
+<footer>
+<p>© 2026 PickupPlay – free and open source.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

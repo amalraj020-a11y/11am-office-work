@@ -1,0 +1,21 @@
+/* Basic reset */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.5;background:#f4f4f9;color:#333;padding:1rem}
+header{text-align:center;margin-bottom:1.5rem}
+header h1{font-size:2rem;color:#2c3e50}
+.tagline{color:#7f8c8d;font-style:italic}
+main{max-width:600px;margin:auto}
+.view{display:none}
+.view.active{display:block}
+form{display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem}
+label{font-weight:bold}
+input,select,button{padding:0.5rem;font-size:1rem}
+button{background:#27ae60;color:#fff;border:none;cursor:pointer;margin-top:0.5rem}
+button:hover{background:#219150}
+#link-section{margin-top:1rem}
+#share-link{width:100%}
+.hidden{display:none}
+ul{list-style:none;padding-left:0}
+li{background:#ecf0f1;margin:0.3rem 0;padding:0.4rem;border-radius:4px}
+footer{text-align:center;margin-top:2rem;font-size:0.9rem;color:#555}
+@media (max-width:480px){body{padding:0.5rem}}
