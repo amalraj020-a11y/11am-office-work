@@ -1,0 +1,73 @@
+{
+  "project_name": "FamilyMeal Planner",
+  "slug": "familymeal-planner",
+  "problem": "Households often struggle to coordinate daily meals, manage grocery lists, and assign cooking responsibilities, leading to repeated meals, food waste, and stress.",
+  "solution": "A lightweight offline‑first web app that lets families create weekly meal plans, share grocery lists, assign cooking slots, and track pantry items, all stored locally in the browser.",
+  "target_customers": [
+    "Busy families",
+    "Roommates sharing a kitchen",
+    "Co‑living communities"
+  ],
+  "competitors": [
+    {
+      "name": "MealBoard",
+      "url": "",
+      "difference": "MealBoard is a paid SaaS with cloud sync; our app is free, offline‑first and stores data locally.",
+      "verified": false
+    },
+    {
+      "name": "Cozi",
+      "url": "",
+      "difference": "Cozi offers many family tools but requires sign‑up and ads; we provide a no‑login, ad‑free experience focused on meals.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create a weekly meal grid with drag‑and‑drop meals",
+    "Add recipes or free‑form meal notes",
+    "Assign cooking responsibility per meal",
+    "Generate a consolidated grocery list from selected meals",
+    "Pantry inventory tracking",
+    "Offline‑first with data saved in localStorage"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a premium export to PDF and optional cloud backup for $2.99/month after 1,000 active users.",
+    "free_tier": "All core features remain free; premium adds PDF export and optional encrypted cloud sync."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free‑tier limits"
+  ],
+  "launch_strategy": [
+    "Publish the site on GitHub Pages and share the link in family‑oriented subreddits and parenting Facebook groups.",
+    "Collect feedback via a simple in‑app survey stored in localStorage and iterate.",
+    "After 50 sign‑ups, add the optional premium export feature."
+  ],
+  "potential_customers": [
+    "Parents of school‑age children",
+    "College students sharing an apartment",
+    "Co‑living house managers"
+  ],
+  "marketing_content": {
+    "tagline": "Plan meals, share chores, waste less – all in one free app.",
+    "social_post": "Tired of the same dinner every night? 🍲 Meet FamilyMeal Planner – an offline‑first web app that lets you schedule weekly meals, assign cooking duties, and auto‑generate grocery lists. No login, no ads, just simple planning. Try it now at https://yourusername.github.io/familymeal-planner"
+  },
+  "tests": [
+    "Add three meals to Monday, assign two different family members, generate grocery list – expect list to contain all ingredients from the three meals.",
+    "Open the app on a second device without internet, verify previously entered data persists via localStorage."
+  ],
+  "next_improvements": [
+    "Add recipe import from public APIs (e.g., Spoonacular) with API key stored client‑side.",
+    "Implement optional encrypted cloud sync using a free backend like Firebase free tier.",
+    "Add push notifications for upcoming cooking assignments."
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-25",
+  "generated_at": "2026-11-25T07:02:11.126345+05:30"
+}
