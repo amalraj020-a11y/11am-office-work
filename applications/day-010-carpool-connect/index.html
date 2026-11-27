@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carpool Connect</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Carpool Connect</h1>
+</header>
+<main>
+<section id="form-section">
+<h2>Create Ride</h2>
+<form id="ride-form" aria-label="Create ride form">
+<div class="form-group">
+<label for="type">Type</label>
+<select id="type" required>
+<option value="offer">Offer a ride</option>
+<option value="request">Request a ride</option>
+</select>
+</div>
+<div class="form-group">
+<label for="origin">Origin</label>
+<input type="text" id="origin" placeholder="e.g. Main St" required>
+</div>
+<div class="form-group">
+<label for="destination">Destination</label>
+<input type="text" id="destination" placeholder="e.g. Oak Ave" required>
+</div>
+<div class="form-group">
+<label for="time">Time (HH:MM)</label>
+<input type="time" id="time" required>
+</div>
+<div class="form-group">
+<label for="seats">Seats</label>
+<input type="number" id="seats" min="1" value="1" required>
+</div>
+<button type="submit">Add Ride</button>
+</form>
+</section>
+<section id="matches-section">
+<h2>Matches</h2>
+<ul id="matches-list" aria-live="polite"></ul>
+</section>
+<section id="rides-section">
+<h2>Your Rides</h2>
+<ul id="rides-list" aria-live="polite"></ul>
+</section>
+</main>
+<footer>
+<p>&copy; 2026 Carpool Connect – Open source</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "project_name": "Carpool Connect",
+  "slug": "carpool-connect",
+  "problem": "Urban commuters often drive alone, increasing traffic, emissions, and costs, while lacking a simple, offline‑first way to find reliable local carpool partners with matching schedules.",
+  "solution": "Carpool Connect lets users create recurring ride offers or requests, match based on route, time, and seat availability, and confirm rides via a lightweight UI that works fully offline and stores data in the browser.",
+  "target_customers": [
+    "urban commuters",
+    "students",
+    "employees in office districts"
+  ],
+  "competitors": [
+    {
+      "name": "Waze Carpool",
+      "url": "",
+      "difference": "Waze requires accounts and internet; Carpool Connect is offline‑first, no login, and stores data locally.",
+      "verified": false
+    },
+    {
+      "name": "BlaBlaCar",
+      "url": "",
+      "difference": "BlaBlaCar focuses on intercity trips and payment processing; our app targets short daily commutes and is free with no payments.",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Create recurring ride offers or requests with start/end locations, time, and seat count",
+    "Automatic matching of compatible rides within a 5‑km radius",
+    "Accept or decline matches with one‑click confirmation",
+    "Local storage of all rides and matches for offline access",
+    "Responsive design for mobile and desktop"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a premium tier with export to CSV and custom route colors for $2.99/month after 1000 rides stored.",
+    "free_tier": "Unlimited ride creation, matching, and local storage up to browser limits."
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free-tier limits"
+  ],
+  "launch_strategy": [
+    "Publish repo on GitHub with GitHub Pages enabled",
+    "Share on local commuter forums and university bulletin boards",
+    "Collect feedback via a simple in‑app survey stored in localStorage"
+  ],
+  "potential_customers": [
+    "city transit authority pilot programs",
+    "university campus commuter groups"
+  ],
+  "marketing_content": {
+    "tagline": "Ride together, save money, cut traffic.",
+    "social_post": "🚗💚 Tired of driving alone? Carpool Connect lets you find nearby commuters with matching schedules – all offline, no login needed. Try it now on GitHub Pages! #carpool #commute #opensource"
+  },
+  "tests": [
+    "Create a ride offer for 8:00 AM, 2 seats, route A→B; create a ride request for 8:05 AM, 1 seat, same route – the app should show a match and allow acceptance.",
+    "Turn off internet, reload page – previously saved rides and matches should persist and be viewable."
+  ],
+  "next_improvements": [
+    "Add map preview using OpenStreetMap static images",
+    "Implement export/import of rides via JSON file",
+    "Introduce optional email notifications using mailto links"
+  ],
+  "mission": "application",
+  "ist_date": "2026-11-27",
+  "generated_at": "2026-11-27T06:38:10.462386+05:30"
+}
