@@ -1,0 +1,21 @@
+/* Basic Reset */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.5;background:#f9fafb;color:#333;padding:1rem;}
+header{text-align:center;margin-bottom:1rem;}
+h1{font-size:2rem;color:#2c3e50;}
+main{max-width:800px;margin:auto;display:grid;gap:1.5rem;}
+section{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1);}
+label{display:block;margin-top:0.5rem;}
+input,textarea,select,button{width:100%;margin-top:0.3rem;padding:0.5rem;border:1px solid #ccc;border-radius:4px;}
+button{background:#2980b9;color:#fff;border:none;cursor:pointer;margin-top:0.8rem;}
+button:hover{background:#1c5980;}
+#alerts{list-style:none;}
+.alert-item{border-left:4px solid #2980b9;padding:0.5rem;margin-bottom:0.8rem;background:#ecf0f1;border-radius:4px;}
+.alert-item[data-category="Safety"]{border-color:#e74c3c;}
+.alert-item[data-category="Lost Pet"]{border-color:#27ae60;}
+.alert-item[data-category="Maintenance"]{border-color:#f1c40f;}
+.alert-header{display:flex;justify-content:space-between;align-items:center;}
+.alert-title{font-weight:bold;}
+.alert-actions button{background:none;color:#c0392b;border:none;cursor:pointer;padding:0.2rem;}
+.hidden{display:none;}
+@media (max-width:600px){h1{font-size:1.5rem;}}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neighborhood Alert Board</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Neighborhood Alert Board</h1>
+</header>
+<main>
+  <section id="alert-form" aria-labelledby="form-title">
+    <h2 id="form-title">Post a New Alert</h2>
+    <form id="newAlertForm" novalidate>
+      <label for="title">Title<span aria-hidden="true">*</span></label>
+      <input type="text" id="title" name="title" required minlength="3" />
+
+      <label for="description">Description<span aria-hidden="true">*</span></label>
+      <textarea id="description" name="description" rows="3" required minlength="5"></textarea>
+
+      <label for="category">Category</label>
+      <select id="category" name="category">
+        <option value="Safety">Safety</option>
+        <option value="Lost Pet">Lost Pet</option>
+        <option value="Maintenance">Maintenance</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="expires">Expires (optional)</label>
+      <input type="date" id="expires" name="expires" />
+
+      <button type="submit">Add Alert</button>
+    </form>
+  </section>
+
+  <section id="filters" aria-labelledby="filter-title">
+    <h2 id="filter-title">Filter Alerts</h2>
+    <select id="categoryFilter">
+      <option value="All">All</option>
+      <option value="Safety">Safety</option>
+      <option value="Lost Pet">Lost Pet</option>
+      <option value="Maintenance">Maintenance</option>
+      <option value="Other">Other</option>
+    </select>
+    <button id="shareBtn">Share Board</button>
+  </section>
+
+  <section id="alert-list" aria-labelledby="list-title">
+    <h2 id="list-title">Current Alerts</h2>
+    <ul id="alerts"></ul>
+    <p id="emptyState" class="hidden">No alerts to display.</p>
+  </section>
+</main>
+<footer>
+  <p>© 2026 Neighborhood Alert Board – Free and Open Source</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
