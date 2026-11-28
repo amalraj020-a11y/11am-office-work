@@ -1,0 +1,71 @@
+{
+  "project_name": "KidSit Scheduler",
+  "slug": "kidsit-scheduler",
+  "problem": "Parents need reliable, nearby babysitters but rely on word‑of‑mouth, group chats, or paid platforms, leading to last‑minute gaps, safety concerns, and wasted time.",
+  "solution": "A lightweight, mobile‑responsive static website where neighborhood babysitters can list their availability and parents can request a sitter. All data is stored locally in the browser, enabling quick offline use without any backend.",
+  "target_customers": [
+    "Parents of children aged 0‑12 in residential neighborhoods",
+    "Local babysitters looking for nearby gigs"
+  ],
+  "competitors": [
+    {
+      "name": "Care.com",
+      "url": "",
+      "difference": "Full‑service marketplace with fees; our tool is free, local, and requires no account",
+      "verified": false
+    },
+    {
+      "name": "Sittercity",
+      "url": "",
+      "difference": "National platform with background checks; we focus on hyper‑local, community‑driven listings",
+      "verified": false
+    }
+  ],
+  "features": [
+    "Babysitter sign‑up with name, contact, and weekly availability slots",
+    "Parents can post a babysitting request specifying date, time, and child age",
+    "Automatic matching of requests to available sitters",
+    "Local storage persistence so data survives page reloads",
+    "Responsive design for mobile and desktop",
+    "Accessible forms with keyboard navigation and validation"
+  ],
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "monetization": {
+    "model": "freemium",
+    "pricing_hypothesis": "Offer a premium badge for sitters ($2/month) that highlights them on the list; free tier remains fully functional",
+    "free_tier": "All core features remain free for both parents and sitters"
+  },
+  "free_hosting": "GitHub Pages",
+  "operating_costs": [
+    "Current prototype: ₹0 within published free-tier limits"
+  ],
+  "launch_strategy": [
+    "Create a simple landing page on GitHub Pages and share the link in local neighborhood social media groups",
+    "Collect feedback from 5 families and 3 sitters to refine UI and validation"
+  ],
+  "potential_customers": [
+    "Parent‑teacher associations",
+    "Community center newsletters",
+    "Neighborhood Facebook groups"
+  ],
+  "marketing_content": {
+    "tagline": "Find a trusted babysitter next door, fast.",
+    "social_post": "🚸 Parents, tired of last‑minute scramble for a babysitter? KidSit Scheduler lets local sitters list their slots and parents request help in seconds—no fees, no apps, just your neighborhood. Try it now: https://yourusername.github.io/kidsit-scheduler"
+  },
+  "tests": [
+    "Open the site, add a babysitter with a future time slot, then create a request that matches that slot – the sitter appears in the match list.",
+    "Enter an invalid phone number – the form shows a validation error and prevents submission."
+  ],
+  "next_improvements": [
+    "Add optional email notifications via mailto links",
+    "Implement a simple rating system stored in localStorage",
+    "Allow export/import of data as JSON for backup"
+  ],
+  "mission": "website",
+  "ist_date": "2026-11-28",
+  "generated_at": "2026-11-28T19:57:07.487742+05:30"
+}
